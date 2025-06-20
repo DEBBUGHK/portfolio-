@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Michael's Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0e0e0e;
+      color: #f0f0f0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #111;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #0f0;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      color: #aaa;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .skills .bar-container {
+      background: #222;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .bar {
+      height: 20px;
+      border-radius: 8px;
+      background: linear-gradient(to right, #0f0, #3f3);
+      width: 0;
+      transition: width 2s ease;
+    }
+
+    .projects, .contact {
+      display: grid;
+      gap: 20px;
+    }
+
+    .project, .contact form {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      background: #0f0;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>Michael.dev</strong></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hello, I'm Michael</h1>
+    <p>Computer Science Student | Web Developer | Tech Enthusiast</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m passionate about Mathematics, Computer Science, and Statistics. I create web projects, teach coding, and love solving problems.</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <p>Hover to animate:</p>
+    <div>
+      <label>HTML</label>
+      <div class="bar-container"><div class="bar" data-skill="100%"></div></div>
+
+      <label>CSS</label>
+      <div class="bar-container"><div class="bar" data-skill="80%"></div></div>
+
+      <label>JavaScript</label>
+      <div class="bar-container"><div class="bar" data-skill="60%"></div></div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Responsive Calculator (Java)</h3>
+      <p>A Java Swing-based calculator project with a modern GUI.</p>
+    </div>
+    <div class="project">
+      <h3>My Personal Blog</h3>
+      <p>Built with HTML and CSS to share my thoughts and study tips.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Michael. All rights reserved.
+  </footer>
+
+  <script>
+    // Animate skill bars on hover
+    document.querySelectorAll('.bar-container').forEach(container => {
+      container.addEventListener('mouseenter', () => {
+        const bar = container.querySelector('.bar');
+        bar.style.width = bar.getAttribute('data-skill');
+      });
+      container.addEventListener('mouseleave', () => {
+        const bar = container.querySelector('.bar');
+        bar.style.width = '0';
+      });
+    });
+  </script>
+
+</body>
+</html>
